@@ -1,0 +1,7 @@
+res://world.tscn
+res://materials/dark/regular.tres
+res://materials/red/regular.tres
+res://materials/purple/regular.tres
+res://player/player.tscn
+res://weapons/pistol/pistol.tscn
+res://materials/orange/regular.tres

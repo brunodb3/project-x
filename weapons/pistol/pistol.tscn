@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://door44nhxqenx"]
+
+[ext_resource type="Material" uid="uid://brjh47adk3300" path="res://materials/purple/regular.tres" id="1_mnngb"]
+[ext_resource type="Script" path="res://weapons/pistol/pistol.gd" id="1_veqji"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fd26n"]
+
+[node name="Pistol" type="Node3D" node_paths=PackedStringArray("GunCast")]
+script = ExtResource("1_veqji")
+GunCast = NodePath("Muzzle/RayCast3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.7, 0, 0, 0)
+material_override = ExtResource("1_mnngb")
+mesh = SubResource("BoxMesh_fd26n")
+
+[node name="Muzzle" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.365642)
+
+[node name="RayCast3D" type="RayCast3D" parent="Muzzle"]
+target_position = Vector3(0, 0, -50)
+collision_mask = 41
