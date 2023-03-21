@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://fwiep5dqo704"]
+
+[ext_resource type="Script" path="res://weapons/weapon.gd" id="1_cvjaj"]
+[ext_resource type="Material" uid="uid://caquxkxcvbqpb" path="res://materials/blue/regular.tres" id="1_j6gko"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_egu85"]
+size = Vector3(0.2, 0.3, 0.7)
+
+[node name="Rifle" type="Node3D" node_paths=PackedStringArray("AimCast")]
+script = ExtResource("1_cvjaj")
+AimCast = NodePath("Muzzle/RayCast3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_j6gko")
+mesh = SubResource("BoxMesh_egu85")
+
+[node name="Muzzle" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.36)
+
+[node name="RayCast3D" type="RayCast3D" parent="Muzzle"]
+target_position = Vector3(0, 0, -50)
+collision_mask = 41

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://player/player.gd" id="1_4ouhf"]
 [ext_resource type="Material" uid="uid://cekydjlsg2uip" path="res://materials/light/regular.tres" id="1_30t72"]
 [ext_resource type="Material" uid="uid://bd5m415gucvmm" path="res://materials/red/regular.tres" id="1_xw5gi"]
-[ext_resource type="PackedScene" uid="uid://door44nhxqenx" path="res://weapons/pistol/pistol.tscn" id="4_cxbyb"]
+[ext_resource type="Script" path="res://player/holster.gd" id="4_bbpyd"]
 [ext_resource type="Script" path="res://player/camera.gd" id="4_h83rw"]
 [ext_resource type="PackedScene" uid="uid://dh8m23p5xb4b1" path="res://interface/crosshairs/crosshairs.tscn" id="5_c6x45"]
 
@@ -40,10 +40,9 @@ material_override = ExtResource("1_xw5gi")
 mesh = SubResource("CapsuleMesh_7a1lj")
 skeleton = NodePath("")
 
-[node name="Hand" type="Marker3D" parent="Skeleton"]
+[node name="Holster" type="Marker3D" parent="Skeleton"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.521304, 1.12327, -0.430072)
-
-[node name="Pistol" parent="Skeleton/Hand" instance=ExtResource("4_cxbyb")]
+script = ExtResource("4_bbpyd")
 
 [node name="HorizontalPivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -58,7 +57,7 @@ margin = 0.5
 [node name="Camera3D" type="Camera3D" parent="HorizontalPivot/VerticalPivot/SpringArm3D" node_paths=PackedStringArray("Hand", "Skeleton", "VerticalPivot", "HorizontalPivot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 script = ExtResource("4_h83rw")
-Hand = NodePath("../../../../Skeleton/Hand")
+Hand = NodePath("../../../../Skeleton/Holster")
 Skeleton = NodePath("../../../../Skeleton")
 VerticalPivot = NodePath("../..")
 HorizontalPivot = NodePath("../../..")

@@ -1,7 +1,12 @@
-res://world.tscn
+res://player/player.tscn
 res://materials/dark/regular.tres
 res://materials/red/regular.tres
 res://materials/purple/regular.tres
-res://player/player.tscn
-res://weapons/pistol/pistol.tscn
 res://materials/orange/regular.tres
+res://player/holster.gd
+res://weapons/weapon.gd
+res://weapons/pistol/pistol.gd
+res://world.tscn
+res://weapons/pistol/pistol.tscn
+res://weapons/rifle/rifle.tscn
+res://materials/blue/regular.tres
