@@ -43,9 +43,13 @@ func _process(delta: float):
 
 	var input = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var v_direction = input.rotated(-h_rotation).normalized()
-
-	if v_direction and not Input.is_action_pressed("aim"):
+	
+	if v_direction and not Input.is_action_pressed("aim") and not Hand.equippedWeapon:
 		Skeleton.rotation.y = lerp_angle(Skeleton.rotation.y, atan2(-v_direction.x, -v_direction.y), delta * AngularAcceleration)
+
+	if Hand.equippedWeapon:
+		Hand.rotation.x = lerp_angle(Hand.rotation.x, v_rotation, delta * AngularAcceleration)
+		Skeleton.rotation.y = lerp_angle(Skeleton.rotation.y, h_rotation, delta * AngularAcceleration)
 
 	if Input.is_action_pressed("aim"):
 		var tween = get_tree().create_tween()

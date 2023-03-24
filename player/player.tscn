@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://bd5m415gucvmm" path="res://materials/red/regular.tres" id="1_xw5gi"]
 [ext_resource type="Script" path="res://player/holster.gd" id="4_bbpyd"]
 [ext_resource type="Script" path="res://player/camera.gd" id="4_h83rw"]
-[ext_resource type="PackedScene" uid="uid://dh8m23p5xb4b1" path="res://interface/crosshairs/crosshairs.tscn" id="5_c6x45"]
+[ext_resource type="PackedScene" path="res://interface/crosshairs/crosshairs.tscn" id="5_c6x45"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0cro0"]
 

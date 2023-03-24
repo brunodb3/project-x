@@ -1,14 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://fwiep5dqo704"]
+[gd_scene load_steps=5 format=3 uid="uid://dkv2oody5dj8t"]
 
 [ext_resource type="Script" path="res://weapons/weapon.gd" id="1_cvjaj"]
 [ext_resource type="Material" uid="uid://caquxkxcvbqpb" path="res://materials/blue/regular.tres" id="1_j6gko"]
+[ext_resource type="AudioStream" uid="uid://cskb6wj3t7mu5" path="res://assets/sounds/9mm_gun_fire.mp3" id="2_jd17k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_egu85"]
 size = Vector3(0.2, 0.3, 0.7)
 
-[node name="Rifle" type="Node3D" node_paths=PackedStringArray("AimCast")]
+[node name="Rifle" type="Node3D" node_paths=PackedStringArray("AimCast", "GunMesh", "AudioShoot")]
 script = ExtResource("1_cvjaj")
 AimCast = NodePath("Muzzle/RayCast3D")
+GunMesh = NodePath("MeshInstance3D")
+AudioShoot = NodePath("AudioStreamPlayer")
+IsAutomatic = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jd17k")
+volume_db = -6.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = ExtResource("1_j6gko")

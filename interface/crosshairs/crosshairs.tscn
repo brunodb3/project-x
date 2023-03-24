@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh8m23p5xb4b1"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Texture2D" uid="uid://b2q1fwhiabcfw" path="res://assets/single_white_pixel.png" id="1_om1nx"]
+[ext_resource type="Texture2D" uid="uid://b2q1fwhiabcfw" path="res://assets/images/single_white_pixel.png" id="1_om1nx"]
 
 [node name="Crosshairs" type="Control"]
 layout_mode = 3

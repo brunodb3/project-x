@@ -30,6 +30,7 @@ func holster() -> void:
 	
 	if equippedWeapon:
 		equippedWeapon.queue_free()
+		equippedWeapon = null
 	else:
 		equip_selected_weapon()
 
@@ -40,6 +41,7 @@ func select_weapon() -> void:
 		# @todo: if equipped weapon is same as selected, then we queue_free
 		# otherwise, we queue_free and then equip selected
 		equippedWeapon.queue_free()
+		equippedWeapon = null
 
 	equip_selected_weapon()
 
