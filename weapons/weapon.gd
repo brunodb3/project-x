@@ -31,15 +31,15 @@ func shoot() -> void:
 	animate_recoil()
 	AudioShoot.play()
 
-	var collider = AimCast.get_collider()
+#	var collider = AimCast.get_collider()
 
-	if collider:
-		# @todo: figure out why the decal doesn't show on the walls, only on the floor
-		var decal = BulletDecal.instantiate()
-		collider.add_child(decal)
-
-		decal.transform.origin = AimCast.get_collision_point()
-		decal.look_at(AimCast.get_collision_point() + AimCast.get_collision_normal(), Vector3.UP)
+#	if collider:
+#		# @todo: figure out why the decal doesn't show on the walls, only on the floor
+#		var decal = BulletDecal.instantiate()
+#		collider.add_child(decal)
+#
+#		decal.transform.origin = AimCast.get_collision_point()
+#		decal.look_at(AimCast.get_collision_point() + AimCast.get_collision_normal(), Vector3.UP)
 
 func animate_recoil() -> void:
 	recoil_tween = get_tree().create_tween()
